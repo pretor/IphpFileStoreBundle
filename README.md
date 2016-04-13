@@ -344,6 +344,19 @@ iphp_file_store:
              replace:
                  params: { File : ~ }
 ```
+#### Unique postfix/prefix
+
+Set unique : true to have generated unique postfix/prefix
+``` yaml
+# app/config/config.yml
+iphp_file_store:
+    mappings:
+       some_entity:
+          namer:
+             translit: ~
+             propertyPostfix:
+                  params: { unique : true }
+```
 
 
 ### Directory Namers

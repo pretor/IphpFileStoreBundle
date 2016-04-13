@@ -91,6 +91,8 @@ class DefaultNamer
         $fieldValue = '';
         if (isset($params['use_field_name']) && $params['use_field_name']) {
             $fieldValue = $propertyMapping->getFileDataPropertyName();
+        }elseif(isset($params['unique']) && $params['unique'] == 'true'){
+          $fieldValue = uniqid();
         } else {
             $field = isset($params['field']) && $params['field'] ? $params['field'] : 'id';
             $fieldValue = $obj->{'get' . ucfirst($field)}();
